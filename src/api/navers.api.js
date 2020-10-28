@@ -1,6 +1,5 @@
-import { Api } from './api';
-import { endpoints } from './api/endpoints.api';
-import { httpMethods } from './api/http.api';
+import { Api } from './';
+import { endpoints, http } from './core';
 
 import { removerTimeStamp } from '../utils/formats.utils';
 
@@ -15,7 +14,7 @@ export const serviceNavers = {
   buscarNavers: async () => {
     try {
       const navers = await Api(endpoints.navers().index, {
-        method: httpMethods.get,
+        method: http.methods.get,
         headers: headers
       });
 
@@ -38,7 +37,7 @@ export const serviceNavers = {
 
   editarNaver: (payload) => {
     return Api(endpoints.navers(payload.id).update, {
-      method: httpMethods.update,
+      method: http.methods.update,
       headers: headers,
       body: JSON.stringify({
         job_role: payload.cargo,
@@ -53,7 +52,7 @@ export const serviceNavers = {
 
   criarNaver: (payload) => {
     return Api(endpoints.navers().create, {
-      method: httpMethods.post,
+      method: http.methods.post,
       headers: headers,
       body: JSON.stringify({
         job_role: payload.cargo,
@@ -68,7 +67,7 @@ export const serviceNavers = {
 
   excluirNaver: (idNaver) => {
     return Api(endpoints.navers(idNaver).delete, {
-      method: httpMethods.delete,
+      method: http.methods.delete,
       headers: headers
     });
   }

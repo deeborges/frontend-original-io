@@ -1,5 +1,5 @@
 import { ENV, ENVIRONMENT } from '../../env';
-import { http } from './http.api';
+import { http } from './core/http.core';
 
 export const Api = async (endpoint, options) => {
   try {

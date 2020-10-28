@@ -1,6 +1,5 @@
-import { Api } from './api';
-import { endpoints } from './api/endpoints.api';
-import { httpMethods } from './api/http.api';
+import { Api } from './';
+import { endpoints, http } from './core';
 
 const token = window.localStorage.getItem('token');
 
@@ -12,7 +11,7 @@ const headers = {
 export const serviceAutenticacao = {
   login: (payload) => {
     return Api(endpoints.users().login, {
-      method: httpMethods.post,
+      method: http.methods.post,
       headers: headers,
       body: JSON.stringify({
         email: payload.email,
