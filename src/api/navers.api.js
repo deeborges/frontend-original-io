@@ -3,7 +3,6 @@ import { endpoints, http } from './core';
 
 const headers = {
   'Content-Type': 'application/json',
-  Authorization: `Bearer ${token}`
 };
 
 export const serviceProduto = {
@@ -11,10 +10,10 @@ export const serviceProduto = {
     try {
       const produtos = await Api(endpoints.produto().buscarProdutos, {
         method: http.methods.get,
-        headers: headers
+        headers: headers,
       });
 
-      const traducao = produtos.map((produto) => (console.log(produto)));
+      const traducao = produtos.map((produto) => console.log(produto));
 
       return traducao;
     } catch (error) {
@@ -26,11 +25,11 @@ export const serviceProduto = {
     try {
       const produto = await Api(endpoints.produto(id).buscarProdutoPeloID, {
         method: http.methods.get,
-        headers: headers
+        headers: headers,
       });
       return produto;
     } catch (error) {
       throw new Error(error);
     }
-  }
+  },
 };

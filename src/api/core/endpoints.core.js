@@ -3,7 +3,7 @@ const resource = '/produto';
 
 export const endpoints = {
   // contexto
-  produto: (params) => {
+  produto: (id) => {
     // acoes
     return {
       buscarProdutos: `${resource}`,

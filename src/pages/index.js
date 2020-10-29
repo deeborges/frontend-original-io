@@ -1,0 +1,1 @@
+export { PageProduto } from './produto';
