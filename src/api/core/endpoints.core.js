@@ -1,20 +1,18 @@
-const domainNavers = '/navers';
-const domainUsers = '/users';
+const domain = '/';
 
 export const endpoints = {
-  navers: (id) => {
+  baseWithParams: (params) => {
     return {
-      index: `${domainNavers}`,
-      show: `${domainNavers}/${id}`,
-      delete: `${domainNavers}/${id}`,
-      create: `${domainNavers}`,
-      update: `${domainNavers}/${id}`
+      action: `${domain}`,
     };
   },
-  users: () => {
+  baseNotParams: (params) => {
     return {
-      signup: `${domainUsers}/signup`,
-      login: `${domainUsers}/login`
+      index: `${domain}`,
+      show: `${domain}/${params}`,
+      delete: `${domain}/${params}`,
+      create: `${domain}`,
+      update: `${domain}/${params}`,
     };
-  }
+  },
 };
