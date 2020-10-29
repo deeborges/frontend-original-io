@@ -1,18 +1,13 @@
-const domain = '/';
+// recurso
+const resource = '/produto';
 
 export const endpoints = {
-  baseWithParams: (params) => {
+  // contexto
+  produto: (params) => {
+    // acoes
     return {
-      action: `${domain}`,
-    };
-  },
-  baseNotParams: (params) => {
-    return {
-      index: `${domain}`,
-      show: `${domain}/${params}`,
-      delete: `${domain}/${params}`,
-      create: `${domain}`,
-      update: `${domain}/${params}`,
+      buscarProdutos: `${resource}`,
+      buscarProdutoPeloID: `${resource}/${id}`,
     };
   },
 };

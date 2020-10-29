@@ -1,4 +1,4 @@
-import { ENV, ENVIRONMENT } from '../../env';
+import { ENV, ENVIRONMENT } from '../env';
 import { http } from './core/http.core';
 
 export const Api = async (endpoint, options) => {
