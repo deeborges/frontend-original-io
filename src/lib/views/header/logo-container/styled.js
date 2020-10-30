@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  align-items: center;
   background-color: #ffffff;
   display: grid;
-  justify-content: center;
+  grid-template-columns: 1fr;
   height: auto;
   position: relative;
   width: 100%;
@@ -13,6 +12,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: grid;
   height: inherit;
+  justify-content: center;
   padding: 24px 0;
   position: relative;
   width: inherit;
